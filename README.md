@@ -1,9 +1,22 @@
 # 🌍 Global CO₂ Emissions Dashboard
 
+**Sustainability Analytics | Tableau • CO₂ Trends • Geographic Analysis • Data Storytelling**
+
 An interactive **Tableau** dashboard exploring carbon dioxide emissions around the world — which countries emit the most, how emissions have changed over time, and how they relate to population and economic output.
 
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
 ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white)
+
+## Business value
+
+Turn country-level emissions data into geographic comparisons and historical trends. The dashboard supports exploration of absolute emissions alongside population and economic measures.
+
+### Questions this project addresses
+
+- Which countries have the highest annual emissions?
+- How have emissions changed over time?
+- How do comparisons change when emissions are measured per capita?
+
 
 ## 📋 Overview
 
@@ -64,3 +77,14 @@ Geographic (map) visualisation · time-series charts · scatter plots · dashboa
 ---
 
 👤 **Tony Mulunda** — [GitHub @Scarface96](https://github.com/Scarface96)
+
+## Interpretation & limitations
+
+The dataset ends in 2021. Country records and regional aggregates must be distinguished to avoid double-counting; missing observations should not be interpreted as zero emissions.
+
+## Explore the analytics portfolio
+
+- [sql_retail_sales_p1](https://github.com/Scarface96/sql_retail_sales_p1)
+- [HR-Analysis-Dashboard](https://github.com/Scarface96/HR-Analysis-Dashboard)
+- [B2B-Sales-Pipeline-CRM-Dashboard-for-TechSolutions-Inc.](https://github.com/Scarface96/B2B-Sales-Pipeline-CRM-Dashboard-for-TechSolutions-Inc.)
+- [Toy-Store-KPI-Report](https://github.com/Scarface96/Toy-Store-KPI-Report)
