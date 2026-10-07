@@ -88,3 +88,7 @@ The dataset ends in 2021. Country records and regional aggregates must be distin
 - [HR-Analysis-Dashboard](https://github.com/Scarface96/HR-Analysis-Dashboard)
 - [B2B-Sales-Pipeline-CRM-Dashboard-for-TechSolutions-Inc.](https://github.com/Scarface96/B2B-Sales-Pipeline-CRM-Dashboard-for-TechSolutions-Inc.)
 - [Toy-Store-KPI-Report](https://github.com/Scarface96/Toy-Store-KPI-Report)
+
+## About This Project
+
+A Tableau analytics project that transforms historical global CO₂ data into interactive visual insights. It demonstrates dashboard design, geographic analysis, trend exploration and data storytelling for environmental and sustainability-focused decision making.
