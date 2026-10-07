@@ -9,6 +9,17 @@ An interactive **Tableau** dashboard exploring carbon dioxide emissions around t
 
 Climate data is huge and hard to read in a table. This dashboard turns more than 50,000 rows of emissions data into a single view where you can compare countries and see long-term trends.
 
+## 📈 Visuals
+
+The first image is the dashboard preview stored in the workbook. Charts built with Python (pandas + matplotlib) from the data files in this repo.
+
+<p align="center"><img src="docs/images/tableau_preview.png" alt="Preview of the Tableau dashboard" width="384"></p>
+<p align="center"><sub>Dashboard preview saved inside the Tableau workbook (top-left section)</sub></p>
+
+<p align="center"><img src="docs/images/world_trend.png" alt="Global CO2 emissions from 1850 to 2021" width="85%"></p>
+
+<p align="center"><img src="docs/images/top_emitters.png" alt="Top 10 emitting countries in 2021" width="85%"></p>
+
 ## 🗂️ Dataset
 
 `visualizing_global_co2_data.csv` — **278 countries and regions**, yearly from **1750 to 2021** (~50,600 rows).
