@@ -1,11 +1,30 @@
 # 🌍 Global CO₂ Emissions Dashboard
 
-**Sustainability Analytics | Tableau • CO₂ Trends • Geographic Analysis • Data Storytelling**
+**Sustainability Analytics | Tableau • Python • CO₂ Trends • Geographic Analysis • Data Storytelling**
 
 An interactive **Tableau** dashboard exploring carbon dioxide emissions around the world — which countries emit the most, how emissions have changed over time, and how they relate to population and economic output.
 
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
 ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+
+## 🌐 Live Report
+
+**[scarface96.github.io/Global-CO2-Emissions-Dashboard](https://scarface96.github.io/Global-CO2-Emissions-Dashboard/)**
+
+The Tableau workbook is still here. The same dataset now also drives a Python analysis that publishes an interactive web report, rebuilt by GitHub Actions on every push. No Tableau licence is needed to view it.
+
+**What the Python analysis adds:**
+
+- **Emissions by source since 1850:** coal is still 40% of the 2021 total
+- **Animated world map** of CO₂ per person, 1960–2021, with a year slider and play button
+- **Three rankings that disagree:** China leads on annual totals, Gulf producers per person, the United States over all of history
+- **Historical responsibility:** the US holds 24% of all CO₂ ever emitted with 4% of the world's people; Africa holds 18% of people but 3% of emissions
+- **Decoupling:** 34 of 92 sizeable emitters grew GDP while cutting CO₂ (1990–2018), with indexed GDP vs CO₂ for six countries
+- **Last decade's trend** for the 25 largest emitters (log-linear fit)
+- **Country explorer:** pick any country to see its emissions by fuel and compare its emissions per person with any other
 
 ## Business value
 
@@ -60,10 +79,24 @@ The **Global CO2 Emissions** dashboard combines:
 ## 📁 Repository Contents
 
 ```
-├── Global CO2 Emissions Dashboard.twbx                   # Tableau packaged workbook
-├── visualizing_global_co2_data.csv                       # Dataset
-├── visualizing_global_CO2_emissions_data_dictionary.xlsx # Field definitions
-└── README.md
+├── analysis/
+│   ├── data.py        # Loading, country vs aggregate split, rankings, shares, decoupling, trends, explorer data
+│   ├── report.py      # Turns the analysis into the interactive web page
+│   └── build.py       # Charts, map animation, country explorer, site/index.html
+├── tests/             # pytest checks (aggregates excluded, fuels add up, rankings, indices, trend maths)
+├── .github/workflows/deploy.yml   # Test, build and publish to GitHub Pages
+├── Global CO2 Emissions Dashboard.twbx   # Tableau workbook
+├── visualizing_global_co2_data.csv
+├── visualizing_global_CO2_emissions_data_dictionary.xlsx
+└── requirements.txt
+```
+
+**Run the Python report locally:**
+
+```bash
+pip install -r requirements.txt
+python -m pytest
+python -m analysis.build    # writes site/index.html
 ```
 
 ## 🚀 How to Use
