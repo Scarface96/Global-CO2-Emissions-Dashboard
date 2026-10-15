@@ -1,0 +1,59 @@
+// Power BI measures for Global CO2 Emissions
+// Create a measure table first (Home > Enter data > name it _Measures > Load),
+// then for each block: select _Measures > New measure > paste the block > set the format shown.
+
+// ---- Calculated table (Modeling > New table) ----
+dim_year =
+-- Shared year axis for all three fact tables.
+DISTINCT (
+    UNION (
+        DISTINCT ( fact_country_year[year] ),
+        DISTINCT ( fact_fuel[year] ),
+        DISTINCT ( fact_world[year] )
+    )
+)
+
+// Format: #,0.0
+CO2 (Mt) =
+SUM ( fact_country_year[co2] )
+
+// Format: #,0
+Population =
+SUM ( fact_country_year[population] )
+
+// Format: 0.00
+CO2 per Person (t) =
+DIVIDE ( [CO2 (Mt)] * 1000000, [Population] )
+
+// Format: #,0
+Cumulative CO2 (Mt) =
+-- Use with a single year selected.
+SUM ( fact_country_year[cumulative_co2] )
+
+// Format: #,0.0
+World CO2 (Mt) =
+SUM ( fact_world[co2] )
+
+// Format: 0.00
+World CO2 per Person (t) =
+DIVIDE ( SUM ( fact_world[co2] ) * 1000000, SUM ( fact_world[population] ) )
+
+// Format: 0.0%
+Share of World CO2 =
+DIVIDE ( [CO2 (Mt)], [World CO2 (Mt)] )
+
+// Format: +0%;-0%;0%
+CO2 Change since 1990 =
+VAR y = MAX ( dim_year[year] )
+VAR base = CALCULATE ( [CO2 (Mt)], dim_year[year] = 1990 )
+VAR now = CALCULATE ( [CO2 (Mt)], dim_year[year] = y )
+RETURN
+    DIVIDE ( now - base, base )
+
+// Format: #,0.0
+Fuel CO2 (Mt) =
+SUM ( fact_fuel[co2] )
+
+// Format: 0.0%
+Fuel Share =
+DIVIDE ( [Fuel CO2 (Mt)], CALCULATE ( [Fuel CO2 (Mt)], ALL ( fact_fuel[fuel] ) ) )
