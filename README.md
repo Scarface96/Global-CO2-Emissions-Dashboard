@@ -26,6 +26,12 @@ The Tableau workbook is still here. The same dataset now also drives a Python an
 - **Last decade's trend** for the 25 largest emitters (log-linear fit)
 - **Country explorer:** pick any country to see its emissions by fuel and compare its emissions per person with any other
 
+## 📊 Tableau & Power BI
+
+The Tableau workbook is in the repo root. [`bi/`](bi/) adds a **Power BI** kit built on the same data: model-ready tables, ready-to-paste DAX measures, a branded theme, a page-by-page layout, and the exact numbers the finished report should show.
+
+**[Open the build guide →](bi/README.md)**
+
 ## Business value
 
 Turn country-level emissions data into geographic comparisons and historical trends. The dashboard supports exploration of absolute emissions alongside population and economic measures.
